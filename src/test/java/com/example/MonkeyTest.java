@@ -29,12 +29,14 @@ class MonkeyTest {
             monkey = applicationContext.getBean(Monkey.class);
         } catch (BeanInstantiationException e) {
             assertNull(monkey);
-            assertInstanceOf(RedisConnectionException.class, e.getCause(), "Root cause must be of type RedisConnectionException");
+            e.printStackTrace();
+            assertInstanceOf(RedisConnectionException.class,
+                             e.getCause(),
+                             "Root cause must be of type RedisConnectionException");
             int callCount = redisErrorHandler.getCallCount();
             assertTrue(callCount > initialCallCount,
                        "RedisErrorHandler call count (" + callCount + ") must be greater than the initial RedisErrorHandler call count (" + initialCallCount + ").");
         }
-
     }
 
 }
