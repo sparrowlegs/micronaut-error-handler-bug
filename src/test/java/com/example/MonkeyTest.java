@@ -20,8 +20,8 @@ class MonkeyTest {
     RedisErrorHandler redisErrorHandler;
 
     @Test
-    @DisplayName("error handler count")
-    void getCachedValue() {
+    @DisplayName("RedisErrorHandler is called when Monkey bean is instantiated")
+    void redisErrorHandlerIsCalledWhenMonkeyBeanIsInstantiated() {
         int initialCallCount = redisErrorHandler.getCallCount();
         Monkey monkey = null;
 
