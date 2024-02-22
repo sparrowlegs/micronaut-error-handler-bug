@@ -15,7 +15,7 @@
   <properties>
     <packaging>jar</packaging>
     <jdk.version>21</jdk.version>
-    <release.version>21</release.version>
+    <release.version>${jdk.version}</release.version>
     <micronaut.version>4.2.4</micronaut.version>
     <micronaut.aot.enabled>false</micronaut.aot.enabled>
     <micronaut.aot.packageName>com.example.aot.generated</micronaut.aot.packageName>
@@ -91,6 +91,10 @@
         <configuration>
           <!-- Uncomment to enable incremental compilation -->
           <!-- <useIncrementalCompilation>false</useIncrementalCompilation> -->
+
+          <release>${jdk.version}</release>
+          <source>${jdk.version}</source>
+          <target>${jdk.version}</target>
 
           <annotationProcessorPaths combine.children="append">
             <path>
